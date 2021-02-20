@@ -80,7 +80,96 @@ Statements
 - Statement blocks are usually enclosed in curly brackets {} and can contain nested statements
 - C# statements are case-sensitive
 
+Variables
+- Variables are named identifiers that can be assigned a value
+    - All variable names should be camelCase, with some exceptions
+- Must be declared before they are used
+    - You can declare multiple variables of the same type on the same line
 
+
+- Storing a value in a variable is called assignment or initialization
+    - The value on the right of the equals is stored in the variable on the left
+    - You can declare and initialize a variable on the same line
+
+Constants
+- Variables can usually be updated any time after they are created
+- Constnats are variables whose values can never be changed
+    - The value is set at compile time
+    - They must be initialized when they are declared
+
+Types
+- All variables must have a type
+- The type determines many things, including, but not limited to
+    - What kind of data that varaible can store
+    - What operations can be performed on that data
+- The .NET FCL defines many built-in types you can use
+
+Commonly Used Built-In Types
+- bool - represents true or false
+- int - represents a 32-bit signed integer (-5, 2, 6)
+- double / float - represents floating point numbers (-4.5, 1.9, 19.3948)
+- char - represents a single character ('h')
+- string - represents a collection of charactes ("hello")
+
+Default Values
+- All types have a default value
+- Variables are set to the default value when they are declared
+    - The default value for bool is false
+    - The default value for int is 0
+    - The default value for double / float is 0.
+    - The default value for char is the null character ('\0')
+    - The default value for string is null
+
+Min/Max Values
+- All numeric types have a min and max value
+    - You will get an error if you go beyond these values
+- To access those values, use the MinValue and MaxValue properties
+
+
+Strongly/Strictly Typed
+- C# is a strongly-typed/strictly-typed language
+- All variabes must have a type
+- Variables cannot change types after they are declared
+- Variables can only contain values that match their type
+
+
+Implicit Types
+- You can let the compiler determine variable type by using the var keyword
+    - Compiler determines type by evaluating the value on the right side of the equals sign
+    - This only works if the variable is being initialized
+
+Expressions
+- Sequence of operands and operators that evaluate to a single value, object, or method
+- The final value of an expression depends on the types and operations use
+
+Operators
+- Operators are "actions" that can be applied to one or more operands (which are usually expressions)
+    - Operators that take one, two, or three operands are called unary, binary, and ternary operators, respectively
+- Operators can behave differently based on the types of the operands
+
+Common Unary Operators
+- Increment ++
+    - Pre-increment ++x - Returns the value of x after incrementing it by 1
+    - Post-increment x++ - Returns the value of x before incrementing it by 1
+- Decrement --
+    - Pre-decrement --x - Returns the value of x after decrementing it by 1
+    - Post-decrement x-- Returns the value of x before decrementing it by 1
+
+Common Binary Operators - Assignment
+- Assignment = - Evaluates the expression on the right side and stores it in the variable on the left
+    - Both sides can reference the same variable, the right side is always evaluated first
+- There are many math + assignment operators, which are just shortcuts
+    - x += y - same as x = x + y
+    - x -= y - same as x = x - y
+    - x *= y - same as x = x * y
+    - x /= y - same as x = x/y
+
+Common Binary Operators - Math
+- Math operators (+ - * /) all behave like you expect them to with numbers
+    - Dividing two ints always returns an int, not a decimal!
+    - The + operator performs concatenation with strings.
+- Modulus % - Returns the remainder of a division operation
+    - For example, 10 & 3 will return 1, since 10/3 is 3 with remainder 1
 
  */
 
@@ -100,6 +189,37 @@ namespace HelloWorld
             Console.WriteLine("Hello World!");
 
             Console.ReadKey(); // wait for the user to press a key
+
+            // multiple variables on same line
+            // int x, y, z;
+            int a = 5, b = 10, c = 20;
+
+            // constant
+            const double pI = 3.14159;
+
+            // min and max values
+            int minInt = int.MinValue; // -2147483648
+            int maxInt = int.MaxValue; // 2147483647
+
+            double minDouble = double.MinValue; // -1.7976931...
+            double maxDouble = double.MaxValue; // 1.7976931...
+
+            // y will be an int since 100 is an int
+            //int x = 100;
+            //var y = 100;
+
+            // expressions
+            int x = 1; // literal
+            int y = 2 + 5; // resolves to an int
+            string hi = "hello!"; // literal
+
+            int z = x + y; // resolves to an int
+
+            // operands
+            // assignment operator has integer variable y and expression 2+3 as operands
+            y = 2 + 3; // two binary operators, each with two operands
+
+
         }
     }
 }

@@ -171,6 +171,20 @@ Common Binary Operators - Math
 - Modulus % - Returns the remainder of a division operation
     - For example, 10 & 3 will return 1, since 10/3 is 3 with remainder 1
 
+Common Unary Operators
+- Member access (.) - Accesses members on the object stored in the variable
+- Logical negation (!) - Negates the operand
+    - Only workso n expressions that evaluate to a boolean
+
+Conditional Operator
+- The conditional operator is the only ternary operator in C#
+condition ? first_expression : second_expression;
+
+- If condition evaluates to true, returns the evaluation of first_expression
+- If condition evaluates to false, returns the evaluation of second_expression
+Example: string s = condition ? "condition is true" : "condition is false";
+
+
  */
 
 /// <summary>

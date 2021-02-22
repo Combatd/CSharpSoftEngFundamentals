@@ -185,6 +185,31 @@ condition ? first_expression : second_expression;
 Example: string s = condition ? "condition is true" : "condition is false";
 
 
+Type Conversion
+- You often need to copy the value of one variable into another
+- What if the variables have different types?
+
+- You need to change the type of th source to store it in the target
+- This is called a type conversion
+
+- There are two main types of conversions in C#
+    - Implicit conversions
+    - Explicit conversions (also called casts)
+
+Implicit Conversions
+- No special syntax is required because the conversion is is type safe
+- The compiler handles this for you, no data wil be lost
+
+Explicit Conversions
+- Require a cast operator, because information might be lost
+- cast from double to int doesn't work because a double is larger than an int
+    - Also, all the decimal places will be lost
+
+- To store a double in an int, you have to cast the double to the int type
+- By doing this, you've told the compiler "I'm aware, just do it anyway"
+- After this statement, y will contain 1, the int part of the double
+    - Note that no rounding occurs, it just takes the int part
+
  */
 
 /// <summary>
@@ -223,15 +248,40 @@ namespace HelloWorld
             //var y = 100;
 
             // expressions
-            int x = 1; // literal
-            int y = 2 + 5; // resolves to an int
-            string hi = "hello!"; // literal
+            //int x = 1; // literal
+            //int y = 2 + 5; // resolves to an int
+            //string hi = "hello!"; // literal
 
-            int z = x + y; // resolves to an int
+            //int z = x + y; // resolves to an int
 
-            // operands
-            // assignment operator has integer variable y and expression 2+3 as operands
-            y = 2 + 3; // two binary operators, each with two operands
+            //// operands
+            //// assignment operator has integer variable y and expression 2+3 as operands
+            //y = 2 + 3; // two binary operators, each with two operands
+
+
+
+            // implicit conversion is type safe
+            //int x = 1;
+            //double y = x; // an int can be stored in a double
+
+            //double x = 1.2345;
+            //int y = x; // does not convert from double to int
+
+            // no rounding, takes the int part in type cast
+            //double x = 1.2345;
+            //int y = (int)x; // 1
+
+            //int x = 4;
+            //int y = 5;
+            //double z = 4 / 5; // equals 0.8, so it is 0 for int part
+            //// z will be 0
+
+            // cast either operand to a double
+            int x = 4;
+            int y = 5;
+
+            //double z = (double) 4 / 5; // 0.8
+            double z = 4 / (double) 5; // 0.8
 
 
         }

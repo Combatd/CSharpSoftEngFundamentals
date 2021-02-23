@@ -232,6 +232,23 @@ Escape Sequences
 
 - To store a file path in a string, you have to escape all the backslashes
 - To represent multiple lines in a string, use \n
+
+String Literals
+- A string literal starts with a @ symbol before the double quotes
+= All characters are interpreted verbatim
+    - Escape sequences are ignored
+- Very useful for file path
+
+
+String Operations
+- The string class has many members that are useful
+- We will briefly cover various common string operations
+- Note that none of the operations change the existing strings
+    - They return new ones!
+
+String Concatenation
+- Concatenation means combining one string with another
+- You can use the + operator to concatenate strings together
  */
 
 /// <summary>
@@ -316,6 +333,16 @@ namespace HelloWorld
 
             // Represent multiple lines in a string
             string multiLineString = "This is a string\nthat prints \non three lines";
+
+            // String Literal file path
+            filePath = @"c:\myFolder\myfile.txt";
+
+            // string concatenation
+            string s1 = "Hello";
+            string s2 = "World";
+            string s3 = "!";
+
+            string s4 = s1 + " " + s2 + " " + s3;
         }
     }
 }

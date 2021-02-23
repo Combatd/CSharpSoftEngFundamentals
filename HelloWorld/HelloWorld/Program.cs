@@ -215,6 +215,23 @@ Converting Numeric Types to Strings
     - This does different things depending on the type
 - For numeric types, it does what you expect
     - In the example, xAsString is "4" and yAsString will be "3.14159"
+
+
+Strings
+- A string is an object that holds a sequence of characters
+- The default value of a string is null
+- Strings can be initialized by using a literal (surrounded by double quotes "")_
+    - Or by anything that returns a string, such as a function
+
+Escape Sequences
+- Strings can contain escape sequences that do variuso things
+- In C#, they all start with a backslash \
+- The most common escape sequences are:
+    - \n represents a new line
+    - \\ represents a backslash character '\'
+
+- To store a file path in a string, you have to escape all the backslashes
+- To represent multiple lines in a string, use \n
  */
 
 /// <summary>
@@ -294,7 +311,11 @@ namespace HelloWorld
             string xAsString = x.ToString();
             string yAsString = y.ToString();
 
+            // escape all the backslashes in filePath
+            string filePath = "c:\\myfolder\\myFile.txt";
 
+            // Represent multiple lines in a string
+            string multiLineString = "This is a string\nthat prints \non three lines";
         }
     }
 }

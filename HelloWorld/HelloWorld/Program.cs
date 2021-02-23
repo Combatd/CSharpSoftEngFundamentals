@@ -210,6 +210,11 @@ Explicit Conversions
 - After this statement, y will contain 1, the int part of the double
     - Note that no rounding occurs, it just takes the int part
 
+Converting Numeric Types to Strings
+- All types have a function called "ToString()"
+    - This does different things depending on the type
+- For numeric types, it does what you expect
+    - In the example, xAsString is "4" and yAsString will be "3.14159"
  */
 
 /// <summary>
@@ -277,11 +282,17 @@ namespace HelloWorld
             //// z will be 0
 
             // cast either operand to a double
-            int x = 4;
-            int y = 5;
+            //int x = 4;
+            ////int y = 5;
 
             //double z = (double) 4 / 5; // 0.8
             double z = 4 / (double) 5; // 0.8
+
+            // Convert numeric type to string
+            int x = 4;
+            double y = 3.14159;
+            string xAsString = x.ToString();
+            string yAsString = y.ToString();
 
 
         }

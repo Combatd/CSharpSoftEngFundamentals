@@ -249,6 +249,29 @@ String Operations
 String Concatenation
 - Concatenation means combining one string with another
 - You can use the + operator to concatenate strings together
+
+
+Checking For Null or Empty
+- If you try to perform operatios on a null string, you will get an error
+- You can use string.IsNullOrEmpty() to check for the following values:
+    - null, "", string.Empty
+- You can also use isNullOrWhiteSpace() to check for the following values:
+    - null, "", string.Empty, spaces, tabs, newlines
+
+String Length
+- All strings have a length (int), which represents the number of characters in it
+- Can be accessed in the Length property
+
+Indexing into Strings
+- Recall that a string is a sequence of characters
+- Each character is stored at an integer index, starting at zero
+- You can use the index operator [] to get a character at a specific index
+    - The expression inside the index operator must resolve to an integer
+    - If the index is outside the string, you will get an error
+
+Changing Case
+- If you need a string in all uppercase, use ToUpper()
+- If you need a string in all lowercase, use ToLower()
  */
 
 /// <summary>
@@ -343,6 +366,11 @@ namespace HelloWorld
             string s3 = "!";
 
             string s4 = s1 + " " + s2 + " " + s3;
+
+            // changing case
+            string str = "Hello World!";
+            string upperStr = str.ToUpper();
+            string lowerStr = str.ToLower();
         }
     }
 }

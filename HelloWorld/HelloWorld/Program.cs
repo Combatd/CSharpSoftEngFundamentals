@@ -272,6 +272,21 @@ Indexing into Strings
 Changing Case
 - If you need a string in all uppercase, use ToUpper()
 - If you need a string in all lowercase, use ToLower()
+
+Getting a Substring
+- There are two ways to ask for a substring
+    - string.Substring(int startIndex)
+    - string.Substring(int startIndex, int length)
+
+Removing a Substring
+- There are two ways to remove a substring
+    - str.Remove(int startIndex)
+    - str.Remove(int startIndex, int count
+
+Replacing
+- There are two ways to replace parts of a string
+    - string.Replace(char oldChar, char newChar)
+    - string.Replace(string oldValue, string newValue)
  */
 
 /// <summary>
@@ -371,6 +386,20 @@ namespace HelloWorld
             string str = "Hello World!";
             string upperStr = str.ToUpper();
             string lowerStr = str.ToLower();
+
+            // get substring
+            string sub1 = str.Substring(0);
+            string sub2 = str.Substring(0, str.Length - 1);
+
+            // remove substring
+            string subRemove1 = str.Remove(1); // H
+            string subRemove2 = str.Remove(0, 6); // World!
+
+            // replace parts of string
+            string subReplace1 = str.Replace('o', '0'); // Hell0 W0rld!
+            string subReplace2 = str.Replace('!', ')'); // Hello World)
+
+            string subReplace3 = str.Replace('World', "Microsoft"); // Hello Microsoft!
         }
     }
 }

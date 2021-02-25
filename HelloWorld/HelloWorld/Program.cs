@@ -340,6 +340,29 @@ Enumerations
 - Each constant is accessed by name, but also has a numeric value
     - The default value type is int. It starts at zero and increments by one.
 - You can explicitly set values as well.
+- To convert frmo enum to int, cast the enum to int
+- To convert from enum to string, call ToString()
+- To convert from string to enum, just use enum.Parse() on the string
+    - You can also ignore case
+
+Structs
+- A struct a type that acts as a contianer for related variables
+- To initialize a struct type variable, use the new keyword
+    - This is called instantiation
+- To access the struct members, use the Member Access Operator (.)
+- A struct is just a blueprint, it does nothing on its own
+- When you instantiate an struct, you are creating an object/instance of that type
+    - The object is unique, and contains a unique copy of everything in the struct
+- This is conceptually the same as creating two different integers
+    - They share the same type but they contain different values
+
+Console Input/Output
+- Console applications interact with the user by using the System.Console class
+- You can also read arguments passed in to the program
+    - This is the string array called args in the Main method
+    - This is covered when arrays are covered in another presentation
+
+Writing to the Console
  */
 
 /// <summary>
@@ -355,23 +378,23 @@ namespace HelloWorld
         static void Main(string[] args)
         {
             // write hello to the console
-            Console.WriteLine("Hello World!");
+            //Console.WriteLine("Hello World!");
 
-            Console.ReadKey(); // wait for the user to press a key
+            //Console.ReadKey(); // wait for the user to press a key
 
-            // multiple variables on same line
-            // int x, y, z;
-            int a = 5, b = 10, c = 20;
+            //// multiple variables on same line
+            //// int x, y, z;
+            //int a = 5, b = 10, c = 20;
 
-            // constant
-            const double pI = 3.14159;
+            //// constant
+            //const double pI = 3.14159;
 
-            // min and max values
-            int minInt = int.MinValue; // -2147483648
-            int maxInt = int.MaxValue; // 2147483647
+            //// min and max values
+            //int minInt = int.MinValue; // -2147483648
+            //int maxInt = int.MaxValue; // 2147483647
 
-            double minDouble = double.MinValue; // -1.7976931...
-            double maxDouble = double.MaxValue; // 1.7976931...
+            //double minDouble = double.MinValue; // -1.7976931...
+            //double maxDouble = double.MaxValue; // 1.7976931...
 
             // y will be an int since 100 is an int
             //int x = 100;
@@ -410,96 +433,120 @@ namespace HelloWorld
             //int x = 4;
             ////int y = 5;
 
-            //double z = (double) 4 / 5; // 0.8
-            double z = 4 / (double) 5; // 0.8
+            ////double z = (double) 4 / 5; // 0.8
+            //double z = 4 / (double)5; // 0.8
 
-            // Convert numeric type to string
-            int x = 4;
-            double y = 3.14159;
-            string xAsString = x.ToString();
-            string yAsString = y.ToString();
+            //// Convert numeric type to string
+            //int x = 4;
+            //double y = 3.14159;
+            //string xAsString = x.ToString();
+            //string yAsString = y.ToString();
 
-            // escape all the backslashes in filePath
-            string filePath = "c:\\myfolder\\myFile.txt";
+            //// escape all the backslashes in filePath
+            //string filePath = "c:\\myfolder\\myFile.txt";
 
-            // Represent multiple lines in a string
-            string multiLineString = "This is a string\nthat prints \non three lines";
+            //// Represent multiple lines in a string
+            //string multiLineString = "This is a string\nthat prints \non three lines";
 
-            // String Literal file path
-            filePath = @"c:\myFolder\myfile.txt";
+            //// String Literal file path
+            //filePath = @"c:\myFolder\myfile.txt";
 
-            // string concatenation
-            string s1 = "Hello";
-            string s2 = "World";
-            string s3 = "!";
+            //// string concatenation
+            //string s1 = "Hello";
+            //string s2 = "World";
+            //string s3 = "!";
 
-            string s4 = s1 + " " + s2 + " " + s3;
+            //string s4 = s1 + " " + s2 + " " + s3;
 
-            // changing case
-            string str = "Hello World!";
-            string upperStr = str.ToUpper();
-            string lowerStr = str.ToLower();
+            //// changing case
+            //string str = "Hello World!";
+            //string upperStr = str.ToUpper();
+            //string lowerStr = str.ToLower();
 
-            // get substring
-            string sub1 = str.Substring(0);
-            string sub2 = str.Substring(0, str.Length - 1);
+            //// get substring
+            //string sub1 = str.Substring(0);
+            //string sub2 = str.Substring(0, str.Length - 1);
 
-            // remove substring
-            string subRemove1 = str.Remove(1); // H
-            string subRemove2 = str.Remove(0, 6); // World!
+            //// remove substring
+            //string subRemove1 = str.Remove(1); // H
+            //string subRemove2 = str.Remove(0, 6); // World!
 
-            // replace parts of string
-            string subReplace1 = str.Replace('o', '0'); // Hell0 W0rld!
-            string subReplace2 = str.Replace('!', ')'); // Hello World)
+            //// replace parts of string
+            //string subReplace1 = str.Replace('o', '0'); // Hell0 W0rld!
+            //string subReplace2 = str.Replace('!', ')'); // Hello World)
 
-            string subReplace3 = str.Replace('World', "Microsoft"); // Hello Microsoft!
+            //string subReplace3 = str.Replace('World', "Microsoft"); // Hello Microsoft!
 
-            int index1 = str.IndexOf('o'); // 4
-            int index2 = str.IndexOf('Z'); // -1
-            int index3 = str.IndexOf("World"); // 6
-            int index4 = str.IndexOf("world"); // -1
+            //int index1 = str.IndexOf('o'); // 4
+            //int index2 = str.IndexOf('Z'); // -1
+            //int index3 = str.IndexOf("World"); // 6
+            //int index4 = str.IndexOf("world"); // -1
 
-            int index5 = str.LastIndexOf('o'); // 7
+            //int index5 = str.LastIndexOf('o'); // 7
 
-            // Trim whitespace from a string
+            //// Trim whitespace from a string
 
-            string unTrimmed = "     Hello world!     ";
+            //string unTrimmed = "     Hello world!     ";
 
-            string trim1 = unTrimmed.TrimStart(); //"Hello world!   "
-            string trim2 = unTrimmed.TrimEnd(); //"     Hello world!"
-            string trim3 = unTrimmed.Trim(); // "Hello world!"
+            //string trim1 = unTrimmed.TrimStart(); //"Hello world!   "
+            //string trim2 = unTrimmed.TrimEnd(); //"     Hello world!"
+            //string trim3 = unTrimmed.Trim(); // "Hello world!"
 
             // Format a string
 
-            const string formatStr = "Hello {0}! Such lovely {1} we're having for a {2}, it only rained {3} times! the time is {4}";
+            //const string formatStr = "Hello {0}! Such lovely {1} we're having for a {2}, it only rained {3} times! the time is {4}";
 
-            const string adam = "Adam";
-            const string noun = "weather";
-            const string dayOfWeek = "Tuesday";
+            //const string adam = "Adam";
+            //const string noun = "weather";
+            //const string dayOfWeek = "Tuesday";
 
 
-            string formattedString = string.Format(formatStr, adam, noun, dayOfWeek);
+            //string formattedString = string.Format(formatStr, adam, noun, dayOfWeek);
 
-            string boolStr = "true";
-            string intStr = "12345";
-            string doubleStr = "3.14159";
+            //string boolStr = "true";
+            //string intStr = "12345";
+            //string doubleStr = "3.14159";
 
-            bool bParsed = bool.Parse(boolStr);
-            int tParsed = int.Parse(intStr);
-            double dParsed = double.Parse(doubleStr);
+            //bool bParsed = bool.Parse(boolStr);
+            //int tParsed = int.Parse(intStr);
+            //double dParsed = double.Parse(doubleStr);
 
             // Enumeration
 
-            enum Mood {
-                Undefined, // defaults to 0
-                Hungry, // defaults to 1
-                Sleepy = 50,
-                Grumpy = 10,
-                Happy = 2
-            }
+        //    enum Mood {
+        //    Undefined, // defaults to 0
+        //    Hungry, // defaults to 1
+        //    Sleepy = 50,
+        //    Grumpy = 10,
+        //    Happy = 2
+        //}
 
-            var myMood = Mood.Happy;
+        ////var myMood = Mood.Happy;
+        //int myMoodAsInt = (int)Mood.Happy;
+        //string myMoodAsStr = Mood.Happy.ToString();
 
-        }
+
+
+        //var myBook = new Book();
+        //myBook.title = "Jurassic Park";
+        //myBook.author = "Michael Crichton";
+        //myBook.price = 9.99;
+
+        // var myBook2 = new Book();
+        // myBook2.title = "Harry Potter";
+        // myBook2.author "J. K. Rowling";
+        // myBook2.price = 5.99;
+
     }
+
+
+    // structs
+    public struct Book
+    {
+        public double price;
+        public string title;
+        public string author;
+    }
+
+
 }

@@ -327,6 +327,19 @@ Formatted Strings
 - For each otken, there must be a corresponding value to insert
     - If there are more tokens than values, you will get an error
 - String.Format will call ToString() on each value and insert that into the string
+
+Converting Strings to Other Types
+- Most types have a function called Parse()
+    - You can also use TryParse), which is almost always better
+- Takes in a string and returns an object of the specified typed
+- If successful, the object is returned. If not, you get an error.
+
+Enumerations
+- An enum is a distinct type that consists of a set of named constants
+    - Typically used to store a collection of related values
+- Each constant is accessed by name, but also has a numeric value
+    - The default value type is int. It starts at zero and increments by one.
+- You can explicitly set values as well.
  */
 
 /// <summary>
@@ -448,11 +461,15 @@ namespace HelloWorld
 
             int index5 = str.LastIndexOf('o'); // 7
 
+            // Trim whitespace from a string
+
             string unTrimmed = "     Hello world!     ";
 
             string trim1 = unTrimmed.TrimStart(); //"Hello world!   "
             string trim2 = unTrimmed.TrimEnd(); //"     Hello world!"
             string trim3 = unTrimmed.Trim(); // "Hello world!"
+
+            // Format a string
 
             const string formatStr = "Hello {0}! Such lovely {1} we're having for a {2}, it only rained {3} times! the time is {4}";
 
@@ -460,7 +477,29 @@ namespace HelloWorld
             const string noun = "weather";
             const string dayOfWeek = "Tuesday";
 
+
             string formattedString = string.Format(formatStr, adam, noun, dayOfWeek);
+
+            string boolStr = "true";
+            string intStr = "12345";
+            string doubleStr = "3.14159";
+
+            bool bParsed = bool.Parse(boolStr);
+            int tParsed = int.Parse(intStr);
+            double dParsed = double.Parse(doubleStr);
+
+            // Enumeration
+
+            enum Mood {
+                Undefined, // defaults to 0
+                Hungry, // defaults to 1
+                Sleepy = 50,
+                Grumpy = 10,
+                Happy = 2
+            }
+
+            var myMood = Mood.Happy;
+
         }
     }
 }

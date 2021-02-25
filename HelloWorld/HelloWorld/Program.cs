@@ -287,6 +287,46 @@ Replacing
 - There are two ways to replace parts of a string
     - string.Replace(char oldChar, char newChar)
     - string.Replace(string oldValue, string newValue)
+
+Searching Strings
+- There are many ways to check if a string contains things:
+    - IndexOf() / LastIndexOf()
+    - Contains()
+    - StartsWith() / EndsWith()
+
+IndexOf() / LastOf()
+- IndexOf() / LastIndexOf() will return the integer index of the first/last occurence of the specified value
+    - It returns -1 if the specified value is not found
+- Very useful when you have to know exactly where the match is
+
+Contains()
+- Contains() returns true if the string contains the specified value
+- Very useful when you don't care where the match is
+
+StartsWith()/EndsWith()
+- StartsWith() / EndsWith() returns true if the string starts / ends with the specified string
+- Note that you can't use single characters here, but you can use a single character string
+
+Trimming whitespace
+- You can trim leading/trailing/both whitespace from a string using TrimStart(), TrimEnd(), or Trim(), respectively
+- Very useful when you have to sanitize user inputs
+
+Splitting
+- You can split a string into an array of strings by specifying the character to split on
+    - Arrays are covered later, but it's good to know this function since it's used so often
+    - Usually used to split a sentence into words by splitting on space
+- The specified character is not included in the results
+
+Formatted Strings
+- There are many, many ways to format strings
+- Use string.Format() to insert the values of one or more expressions into another string
+- Has two parts:
+    - The format string
+    - The values that will be inserted
+- The format string must contain tokens that look like {n} where n is the number of the token
+- For each otken, there must be a corresponding value to insert
+    - If there are more tokens than values, you will get an error
+- String.Format will call ToString() on each value and insert that into the string
  */
 
 /// <summary>
@@ -400,6 +440,27 @@ namespace HelloWorld
             string subReplace2 = str.Replace('!', ')'); // Hello World)
 
             string subReplace3 = str.Replace('World', "Microsoft"); // Hello Microsoft!
+
+            int index1 = str.IndexOf('o'); // 4
+            int index2 = str.IndexOf('Z'); // -1
+            int index3 = str.IndexOf("World"); // 6
+            int index4 = str.IndexOf("world"); // -1
+
+            int index5 = str.LastIndexOf('o'); // 7
+
+            string unTrimmed = "     Hello world!     ";
+
+            string trim1 = unTrimmed.TrimStart(); //"Hello world!   "
+            string trim2 = unTrimmed.TrimEnd(); //"     Hello world!"
+            string trim3 = unTrimmed.Trim(); // "Hello world!"
+
+            const string formatStr = "Hello {0}! Such lovely {1} we're having for a {2}, it only rained {3} times! the time is {4}";
+
+            const string adam = "Adam";
+            const string noun = "weather";
+            const string dayOfWeek = "Tuesday";
+
+            string formattedString = string.Format(formatStr, adam, noun, dayOfWeek);
         }
     }
 }

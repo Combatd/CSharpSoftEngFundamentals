@@ -30,7 +30,12 @@ namespace ExercisesPartOne
             string exerciseString = "Gawr Gura";
 
             Console.WriteLine($"{exerciseBool} {exerciseDouble} {exerciseChar} {exerciseString}");
-            
+
+            int maxInt = int.MaxValue;
+            Console.WriteLine(maxInt);
+            maxInt++; // increment maxValue by 1
+            Console.WriteLine(maxInt); // goes back to lowest number minimum int
+
         }
     }
 }

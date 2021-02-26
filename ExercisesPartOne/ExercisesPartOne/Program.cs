@@ -45,6 +45,17 @@ namespace ExercisesPartOne
             var newString = "This should resolve to a string type";
             Console.WriteLine(newChar + newInt + newString);
             Console.WriteLine(newBool);
+
+            // Operators
+            int x = 1;
+            Console.WriteLine(x);
+            int y = 2;
+            Console.WriteLine(y);
+            int z1 = x++;
+            Console.WriteLine(z1);
+            int z2 = ++y;
+            Console.WriteLine(z2);
+
         }
     }
 }

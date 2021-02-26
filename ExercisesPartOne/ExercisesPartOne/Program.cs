@@ -23,7 +23,13 @@ namespace ExercisesPartOne
             /// </example>
             // **********
 
+            // Variables
+            bool exerciseBool = true;
+            double exerciseDouble = 1.25;
+            char exerciseChar = 'A';
+            string exerciseString = "Gawr Gura";
 
+            Console.WriteLine($"{exerciseBool} {exerciseDouble} {exerciseChar} {exerciseString}");
             
         }
     }

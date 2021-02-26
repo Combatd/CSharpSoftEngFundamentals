@@ -31,11 +31,20 @@ namespace ExercisesPartOne
 
             Console.WriteLine($"{exerciseBool} {exerciseDouble} {exerciseChar} {exerciseString}");
 
+            // Min / Max values
+
             int maxInt = int.MaxValue;
             Console.WriteLine(maxInt);
             maxInt++; // increment maxValue by 1
             Console.WriteLine(maxInt); // goes back to lowest number minimum int
 
+            // Implicit Types
+            var newBool = false;
+            var newInt = 12;
+            var newChar = 'C';
+            var newString = "This should resolve to a string type";
+            Console.WriteLine(newChar + newInt + newString);
+            Console.WriteLine(newBool);
         }
     }
 }

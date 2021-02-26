@@ -363,6 +363,14 @@ Console Input/Output
     - This is covered when arrays are covered in another presentation
 
 Writing to the Console
+- To write to the console, use Console.Write() or Console.WriteLine()
+    - Write() takes in a string and prints it
+    - WriteLine() takes in a string and prints it, and adds a newline at the end
+
+Reading from the Console
+- To read from the console, use the following methods:
+    - Console.Read() reads the next character and returnsthe int value of that character
+    - Console.ReadKey()
  */
 
 /// <summary>

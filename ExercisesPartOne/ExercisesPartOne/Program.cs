@@ -47,15 +47,31 @@ namespace ExercisesPartOne
             Console.WriteLine(newBool);
 
             // Operators
-            int x = 1;
-            Console.WriteLine(x);
-            int y = 2;
-            Console.WriteLine(y);
-            int z1 = x++;
-            Console.WriteLine(z1);
-            int z2 = ++y;
-            Console.WriteLine(z2);
+            //int x = 1;
+            //Console.WriteLine(x);
+            //int y = 2;
+            //Console.WriteLine(y);
+            //int z1 = x++;
+            //Console.WriteLine(z1);
+            //int z2 = ++y;
+            //Console.WriteLine(z2);
 
+            // Math
+            int x = 1;
+            int y = 2;
+            int z = 3;
+
+            int a = x + y;
+            int b = y - x;
+            int c = z / x + y;
+
+            int notEven = 3 % 2;
+            bool isExpressionEven = notEven == 0;
+
+            double threeDecimalDouble = Math.Round(10.23456 / 10, 3);
+
+            Console.WriteLine(isExpressionEven);
+            Console.WriteLine(threeDecimalDouble);
         }
     }
 }

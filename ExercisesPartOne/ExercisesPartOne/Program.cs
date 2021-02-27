@@ -142,6 +142,26 @@ namespace ExercisesPartOne
 
             double dDouble = 3.145;
             Console.WriteLine(string.Format("The first format element has 2 decimals: {0:0.00}", dDouble));
+
+            bool aBool = true;
+            int BInteger = 2;
+            double cDouble = 3.14;
+            char dCharacter = 'D';
+
+            string wStr = aBool.ToString();
+            string xStr = BInteger.ToString();
+            string yStr = cDouble.ToString();
+            string zStr = dCharacter.ToString();
+
+            bool aNewBool = bool.Parse(wStr);
+            int aNewInt = int.Parse(xStr);
+            double aNewDouble = double.Parse(yStr);
+            char aNewChar = char.Parse(zStr);
+
+            Console.WriteLine(aNewBool);
+            Console.WriteLine(aNewInt);
+            Console.WriteLine(aNewDouble);
+            Console.WriteLine(aNewDouble);
         }
     }
 }

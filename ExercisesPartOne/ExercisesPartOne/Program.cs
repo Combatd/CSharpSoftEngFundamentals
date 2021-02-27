@@ -96,6 +96,31 @@ namespace ExercisesPartOne
 
             Console.WriteLine(x); // becomes int
             Console.WriteLine(a); // becomes double with no decimal
+
+            // Strings
+
+            string escapeSeqStr = "Hello..\\ \n ..World!";
+            Console.WriteLine(escapeSeqStr);
+            string literalStr = $"This is a string literal - {escapeSeqStr}";
+            Console.WriteLine(literalStr);
+            Console.WriteLine(escapeSeqStr + $"length is {escapeSeqStr.Length}");
+
+            // Index
+            string burger = "Burger!";
+            Console.WriteLine(burger[0].ToString() + burger[burger.Length / 2].ToString() + burger[burger.Length - 1].ToString()); // used ToString to get strings instead of index numbers
+
+            // Changing case
+            string capsTestStr = "Characters";
+            Console.WriteLine(capsTestStr);
+            Console.WriteLine(capsTestStr.ToLower());
+            Console.WriteLine(capsTestStr.ToUpper());
+
+            // Getting parts of strings
+            string partingStr = "Senzawa";
+            partingStr = partingStr.Remove(0, 1);
+            partingStr = partingStr.Remove(partingStr.Length - 1, 1);
+            Console.WriteLine(partingStr);
+
         }
     }
 }

@@ -135,6 +135,13 @@ namespace ExercisesPartOne
 
             Console.WriteLine(noExtension);
             Console.WriteLine(theDrive);
+
+            const string formatX = "Hello there {0}, I am a {1}";
+            string yFormatter = string.Format(formatX, "Pekora", "Miko");
+            Console.WriteLine(yFormatter);
+
+            double dDouble = 3.145;
+            Console.WriteLine(string.Format("The first format element has 2 decimals: {0:0.00}", dDouble));
         }
     }
 }

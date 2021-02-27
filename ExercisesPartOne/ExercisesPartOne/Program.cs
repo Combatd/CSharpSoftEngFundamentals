@@ -33,45 +33,69 @@ namespace ExercisesPartOne
 
             // Min / Max values
 
-            int maxInt = int.MaxValue;
-            Console.WriteLine(maxInt);
-            maxInt++; // increment maxValue by 1
-            Console.WriteLine(maxInt); // goes back to lowest number minimum int
+            //int maxInt = int.MaxValue;
+            //Console.WriteLine(maxInt);
+            //maxInt++; // increment maxValue by 1
+            //Console.WriteLine(maxInt); // goes back to lowest number minimum int
 
-            // Implicit Types
-            var newBool = false;
-            var newInt = 12;
-            var newChar = 'C';
-            var newString = "This should resolve to a string type";
-            Console.WriteLine(newChar + newInt + newString);
-            Console.WriteLine(newBool);
+            //// Implicit Types
+            //var newBool = false;
+            //var newInt = 12;
+            //var newChar = 'C';
+            //var newString = "This should resolve to a string type";
+            //Console.WriteLine(newChar + newInt + newString);
+            //Console.WriteLine(newBool);
 
-            // Operators
+            //// Operators
+            ////int x = 1;
+            ////Console.WriteLine(x);
+            ////int y = 2;
+            ////Console.WriteLine(y);
+            ////int z1 = x++;
+            ////Console.WriteLine(z1);
+            ////int z2 = ++y;
+            ////Console.WriteLine(z2);
+
+            //// Math
             //int x = 1;
-            //Console.WriteLine(x);
             //int y = 2;
-            //Console.WriteLine(y);
-            //int z1 = x++;
-            //Console.WriteLine(z1);
-            //int z2 = ++y;
-            //Console.WriteLine(z2);
+            //int z = 3;
 
-            // Math
+            //int a = x + y;
+            //int b = y - x;
+            //int c = z / x + y;
+
+            //int notEven = 3 % 2;
+            //bool isExpressionEven = notEven == 0;
+
+            //double threeDecimalDouble = Math.Round(10.23456 / 10, 3);
+
+            //Console.WriteLine(isExpressionEven);
+            //Console.WriteLine(threeDecimalDouble);
+
+            // Type Conversions
             int x = 1;
             int y = 2;
             int z = 3;
 
-            int a = x + y;
-            int b = y - x;
-            int c = z / x + y;
+            double a = 1.2;
+            double b = 2.2;
+            double c = 3.2;
 
-            int notEven = 3 % 2;
-            bool isExpressionEven = notEven == 0;
+            int oldX = x;
+            int oldY = y;
+            int oldZ = z;
 
-            double threeDecimalDouble = Math.Round(10.23456 / 10, 3);
+            x = (int)a;
+            y = (int)b;
+            z = (int)c;
 
-            Console.WriteLine(isExpressionEven);
-            Console.WriteLine(threeDecimalDouble);
+            a = (double)oldX;
+            b = (double)oldY;
+            c = (double)oldZ;
+
+            Console.WriteLine(x); // becomes int
+            Console.WriteLine(a); // becomes double with no decimal
         }
     }
 }

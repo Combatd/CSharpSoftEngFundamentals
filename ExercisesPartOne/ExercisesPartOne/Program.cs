@@ -129,10 +129,12 @@ namespace ExercisesPartOne
             bool charInStr = x.Contains(y);
 
             string fakeFilePath = "c:\\fake\\bar.txt";
+            char theDrive = fakeFilePath[fakeFilePath.IndexOf('c')];
             string[] splitFilePath = fakeFilePath.Split('.');
             string noExtension = splitFilePath[0];
 
             Console.WriteLine(noExtension);
+            Console.WriteLine(theDrive);
         }
     }
 }

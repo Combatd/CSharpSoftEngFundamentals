@@ -180,17 +180,19 @@ namespace ExercisesPartOne
 
             Console.WriteLine(cuteManga.title + cuteManga.author + cuteManga.pages);
 
-            Console.WriteLine("Enter your first name");
-            string firstName = Console.ReadLine();
-            Console.WriteLine("Enter your middle name");
-            string middleName = Console.ReadLine();
-            Console.WriteLine("Enter your last name");
-            string lastName = Console.ReadLine();
+            //Console.WriteLine("Enter your first name");
+            //string firstName = Console.ReadLine();
+            //Console.WriteLine("Enter your middle name");
+            //string middleName = Console.ReadLine();
+            //Console.WriteLine("Enter your last name");
+            //string lastName = Console.ReadLine();
 
-            Console.WriteLine(string.Format("{0} {1} {2}", firstName, middleName, lastName));
+            //Console.WriteLine(string.Format("{0} {1} {2}", firstName, middleName, lastName));
 
-            Console.WriteLine("Press any key to exit...");
-            Console.ReadKey();
+            //Console.WriteLine("Press any key to exit...");
+            //Console.ReadKey();
+
+            
         }
 
         enum Book
@@ -199,11 +201,30 @@ namespace ExercisesPartOne
             Pages
         }
 
+        enum Direction
+        {
+            UP,
+            DOWN,
+            LEFT,
+            RIGHT
+        }
+
         public struct Manga
         {
             public string title;
             public string author;
             public int pages;
         }
+
+        public void travelThing(string direction, bool going, int number)
+        {
+            Console.WriteLine("Enter a direction, true or false, and then a number if desired");
+
+            if (direction != "UP" && direction != "DOWN" && direction != "LEFT" && direction != "RIGHT")
+            {
+                Console.WriteLine("Needs at least two arguments, a direction and a true/false");
+                Console.WriteLine("Ex: Up ");
+            }
+        } 
     }
 }

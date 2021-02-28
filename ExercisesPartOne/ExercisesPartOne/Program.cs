@@ -162,6 +162,17 @@ namespace ExercisesPartOne
             Console.WriteLine(aNewInt);
             Console.WriteLine(aNewDouble);
             Console.WriteLine(aNewDouble);
+
+            // Enums
+            var pagesFromEnum = Book.Pages;
+
+            Console.WriteLine(pagesFromEnum + " " + (int)pagesFromEnum);
+        }
+
+        enum Book
+        {
+            Chapters,
+            Pages
         }
     }
 }

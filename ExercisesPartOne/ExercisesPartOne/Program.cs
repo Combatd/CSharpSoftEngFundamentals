@@ -179,7 +179,18 @@ namespace ExercisesPartOne
             anotherManga.pages = cuteManga.pages;
 
             Console.WriteLine(cuteManga.title + cuteManga.author + cuteManga.pages);
-            
+
+            Console.WriteLine("Enter your first name");
+            string firstName = Console.ReadLine();
+            Console.WriteLine("Enter your middle name");
+            string middleName = Console.ReadLine();
+            Console.WriteLine("Enter your last name");
+            string lastName = Console.ReadLine();
+
+            Console.WriteLine(string.Format("{0} {1} {2}", firstName, middleName, lastName));
+
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadKey();
         }
 
         enum Book

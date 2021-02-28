@@ -167,12 +167,32 @@ namespace ExercisesPartOne
             var pagesFromEnum = Book.Pages;
 
             Console.WriteLine(pagesFromEnum + " " + (int)pagesFromEnum);
+
+            var cuteManga = new Manga();
+            cuteManga.title = "Hololive Alternative";
+            cuteManga.author = "Yagoo";
+            cuteManga.pages = 6969;
+
+            var anotherManga = new Manga();
+            anotherManga.title = cuteManga.title;
+            anotherManga.author = cuteManga.author;
+            anotherManga.pages = cuteManga.pages;
+
+            Console.WriteLine(cuteManga.title + cuteManga.author + cuteManga.pages);
+            
         }
 
         enum Book
         {
             Chapters,
             Pages
+        }
+
+        public struct Manga
+        {
+            public string title;
+            public string author;
+            public int pages;
         }
     }
 }

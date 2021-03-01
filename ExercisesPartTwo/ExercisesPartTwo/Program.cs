@@ -20,6 +20,8 @@ namespace ExercisesPartTwo
                 Console.WriteLine("The x is not a non-negative number 100 or less");
             }
 
+            // Switch
+
             var mood = Mood.Content;
 
             switch (mood)
@@ -39,7 +41,25 @@ namespace ExercisesPartTwo
                 default:
                     Console.WriteLine("Default case: where is the mood?");
                     break;
+                   
             }
+
+
+
+
+
+
+
+
+
+            // Reference Type Equality
+            int[] testArr1 = { 1, 2, 3, 4 };
+            int[] testArr2 = { 1, 2, 3, 4 };
+            int[] testArr3 = { 0, 2, 3, 4 };
+
+            Console.WriteLine(AreArraysEqual(testArr1, testArr2));
+            Console.WriteLine(AreArraysEqual(testArr1, testArr3));
+
         }
 
         public enum Mood
@@ -48,6 +68,23 @@ namespace ExercisesPartTwo
             Melancholic,
             Content,
             Enraged
+        }
+
+        static bool AreArraysEqual(int[] arr1, int[] arr2 )
+        {
+            if(arr1.Length != arr2.Length)
+            {
+                return false;
+            }
+            for(int i = 0; i < arr1.Length; i++)
+            {
+                if (arr1[i] != arr2[i])
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 }

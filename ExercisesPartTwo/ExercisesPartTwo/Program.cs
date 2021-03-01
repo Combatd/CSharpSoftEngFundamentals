@@ -20,6 +20,34 @@ namespace ExercisesPartTwo
                 Console.WriteLine("The x is not a non-negative number 100 or less");
             }
 
+            var mood = Mood.Content;
+
+            switch (mood)
+            {
+                case Mood.Happy:
+                    Console.WriteLine("Happy time!");
+                    break;
+                case Mood.Melancholic:
+                    Console.WriteLine("A Melancholic Day");
+                    break;
+                case Mood.Content:
+                    Console.WriteLine("Generally an okay day");
+                    break;
+                case Mood.Enraged:
+                    Console.WriteLine("Anger seethes from within...");
+                    break;
+                default:
+                    Console.WriteLine("Default case: where is the mood?");
+                    break;
+            }
+        }
+
+        public enum Mood
+        {
+            Happy,
+            Melancholic,
+            Content,
+            Enraged
         }
     }
 }

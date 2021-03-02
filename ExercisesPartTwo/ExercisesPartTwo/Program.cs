@@ -45,7 +45,20 @@ namespace ExercisesPartTwo
             }
 
 
+            // Loops
 
+            string s = "0123456789";
+            int sIndex = 0;
+            while (sIndex < s.Length)
+            {
+                int currentNumber = int.Parse(s[sIndex].ToString());
+      
+                if (currentNumber > 0 && currentNumber % 2 != 0)
+                {
+                  Console.WriteLine(currentNumber);
+                }
+                sIndex++;
+            }
 
 
 
